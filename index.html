@@ -43,6 +43,24 @@
       color: #f9f871;
       text-shadow: 2px 2px 8px #000;
     }
+    .btn-contacto {
+      display: inline-block;
+      background: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.6);
+      transition: all 0.3s ease;
+    }
+    .btn-contacto:hover {
+      background: #ff6f61;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(255, 111, 97, 0.7);
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -137,10 +155,14 @@
   <header>
     <img src="https://imgfz.com/i/bmnsNX4.png" alt="Logo Corporación La Fuerte" class="logo-animado" />
     <h1>Corporación La Fuerte</h1>
+    <p>
+      <a href="https://wa.me/51968093770" class="btn-contacto" target="_blank">
+        📞 Contrata publicidad aquí: 51968093770
+      </a>
+    </p>
   </header>
 
   <main class="grid">
-
     <!-- La Jefa -->
     <div class="card">
       <img src="https://imgfz.com/i/FRicwT8.png" alt="La Jefa" class="logo" />
@@ -206,7 +228,6 @@
       </div>
       <audio controls src="https://panelautodj.innovatestream.pe/8466/;"></audio>
     </div>
-
   </main>
 
   <footer>
