@@ -22,19 +22,48 @@ body{
   color:#fff;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
   background:#0f3460;
   text-align:center;
   padding:2rem 1rem 1.5rem;
+  box-shadow:0 4px 15px rgba(0,0,0,.6);
+}
+
+.logo-animado{
+  width:240px;
+  margin:auto;
+  display:block;
+  animation:entrada 1.8s ease-out,resplandor 3s infinite alternate;
+}
+
+@keyframes entrada{
+  from{transform:scale(.3);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+@keyframes resplandor{
+  from{filter:drop-shadow(0 0 8px #ff6f61)}
+  to{filter:drop-shadow(0 0 18px #ffcc00)}
 }
 
 header h1{
   color:#ffeb3b;
-  margin:0;
+  margin:1rem 0;
+  font-size:2.5rem;
 }
 
-/* GRID */
+.btn-contacto{
+  display:inline-block;
+  background:#ffcc00;
+  color:#000;
+  font-weight:bold;
+  padding:12px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  box-shadow:0 0 15px rgba(255,204,0,.6);
+}
+
+/* ===== GRID ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -42,12 +71,12 @@ header h1{
   padding:14px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
   background:#222831;
   border:2px solid #ff6f61;
   border-radius:16px;
-  padding:12px;
+  padding:12px 6px 14px;
   text-align:center;
   position:relative;
   cursor:pointer;
@@ -72,6 +101,7 @@ header h1{
 .logo{
   width:90px;
   height:90px;
+  object-fit:contain;
   background:#fff;
   padding:5px;
   border-radius:10px;
@@ -83,14 +113,7 @@ h2{
   margin:8px 0;
 }
 
-.song{
-  font-size:12px;
-  color:#ddd;
-  margin-top:6px;
-  min-height:16px;
-}
-
-/* PLAY */
+/* ===== PLAY BUTTON ===== */
 .play-btn{
   width:54px;
   height:54px;
@@ -99,6 +122,7 @@ h2{
   background:#ffcc00;
   cursor:pointer;
   position:relative;
+  animation:pulse 2s infinite;
 }
 
 .play-btn::before{
@@ -113,6 +137,7 @@ h2{
 
 .play-btn.stop{
   background:#ff3b3b;
+  animation:none;
 }
 
 .play-btn.stop::before{
@@ -120,10 +145,16 @@ h2{
   transform:translate(-50%,-50%);
 }
 
-/* FOOTER */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,204,0,.7)}
+  70%{box-shadow:0 0 0 14px rgba(255,204,0,0)}
+  100%{box-shadow:0 0 0 0 rgba(255,204,0,0)}
+}
+
+/* ===== FOOTER ===== */
 footer{
   text-align:center;
-  padding:1rem;
+  padding:1.5rem;
   background:#0f0f0f;
   color:#aaa;
   font-size:.85rem;
@@ -134,57 +165,47 @@ footer{
 <body>
 
 <header>
+  <img src="https://imgfz.com/i/bmnsNX4.png" class="logo-animado">
   <h1>Corporación La Fuerte</h1>
+  <a href="https://wa.me/51968093770" class="btn-contacto">📞 Contrata publicidad aquí</a>
 </header>
 
 <main class="grid">
 
-<!-- LA FUERTE -->
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/7322/" data-port="7322">
+<div class="card" data-stream="https://panelautodj.innovatestream.pe/7322/;">
   <img src="https://imgfz.com/i/fmdxHD8.png" class="logo">
   <h2>La Fuerte</h2>
   <button class="play-btn"></button>
-  <div class="song">🎵 En vivo…</div>
 </div>
 
-<!-- LA JEFA -->
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/7320/" data-port="7320">
+<div class="card" data-stream="https://panelautodj.innovatestream.pe/7320/;">
   <img src="https://imgfz.com/i/FRicwT8.png" class="logo">
   <h2>La Jefa</h2>
   <button class="play-btn"></button>
-  <div class="song">🎵 En vivo…</div>
 </div>
 
-<!-- SAN FRANCISCO -->
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/7324/" data-port="7324">
+<div class="card" data-stream="https://panelautodj.innovatestream.pe/7324/;">
   <img src="https://imgfz.com/i/bBApQu2.png" class="logo">
   <h2>San Francisco</h2>
   <button class="play-btn"></button>
-  <div class="song">🎵 En vivo…</div>
 </div>
 
-<!-- MÁXIMA -->
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/8342/" data-port="8342">
+<div class="card" data-stream="https://panelautodj.innovatestream.pe/8342/;">
   <img src="https://imgfz.com/i/bVMWlXD.png" class="logo">
   <h2>Máxima</h2>
   <button class="play-btn"></button>
-  <div class="song">🎵 En vivo…</div>
 </div>
 
-<!-- LA CUMBIAMBERA -->
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/8464/" data-port="8464">
+<div class="card" data-stream="https://panelautodj.innovatestream.pe/8464/;">
   <img src="https://imgfz.com/i/J89AMPT.png" class="logo">
   <h2>La Cumbiambera</h2>
   <button class="play-btn"></button>
-  <div class="song">🎵 En vivo…</div>
 </div>
 
-<!-- LA RAYA -->
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/8466/" data-port="8466">
+<div class="card" data-stream="https://panelautodj.innovatestream.pe/8466/;">
   <img src="https://imgfz.com/i/zauB0Id.png" class="logo">
   <h2>La Raya</h2>
   <button class="play-btn"></button>
-  <div class="song">🎵 En vivo…</div>
 </div>
 
 </main>
@@ -193,23 +214,6 @@ footer{
 
 <script>
 let currentAudio = null;
-let songInterval = null;
-
-function fetchSong(card){
-  const port = card.dataset.port;
-  const songDiv = card.querySelector('.song');
-
-  fetch(`https://panelautodj.innovatestream.pe:${port}/status-json.xsl`)
-    .then(r=>r.json())
-    .then(data=>{
-      const source = data.icestats.source;
-      const title = Array.isArray(source) ? source[0].title : source.title;
-      songDiv.textContent = title ? '🎵 ' + title : '🎵 En vivo…';
-    })
-    .catch(()=>{
-      songDiv.textContent = '🎵 En vivo…';
-    });
-}
 
 function playRadio(card){
   const btn = card.querySelector('.play-btn');
@@ -218,35 +222,32 @@ function playRadio(card){
   // STOP
   if(card.classList.contains('activa')){
     if(currentAudio){
-      currentAudio.src='';
-      currentAudio=null;
+      currentAudio.src = '';
+      currentAudio = null;
     }
-    clearInterval(songInterval);
     card.classList.remove('activa');
     btn.classList.remove('stop');
     return;
   }
 
-  // Detener otra
+  // Detener otra radio
   if(currentAudio){
-    currentAudio.src='';
-    currentAudio=null;
+    currentAudio.src = '';
+    currentAudio = null;
   }
-  clearInterval(songInterval);
 
   document.querySelectorAll('.card').forEach(c=>c.classList.remove('activa'));
   document.querySelectorAll('.play-btn').forEach(b=>b.classList.remove('stop'));
 
+  // PLAY directo (sin preload, sin hipo)
   currentAudio = new Audio(stream + '?t=' + Date.now());
   currentAudio.play();
 
   card.classList.add('activa');
   btn.classList.add('stop');
-
-  fetchSong(card);
-  songInterval = setInterval(()=>fetchSong(card),10000);
 }
 
+// Click en botón
 document.querySelectorAll('.play-btn').forEach(btn=>{
   btn.addEventListener('click', e=>{
     e.stopPropagation();
@@ -254,6 +255,7 @@ document.querySelectorAll('.play-btn').forEach(btn=>{
   });
 });
 
+// Click en todo el cuadro
 document.querySelectorAll('.card').forEach(card=>{
   card.addEventListener('click', ()=>{
     playRadio(card);
