@@ -1,267 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radio La Poderosa 89.5 FM - Sullana</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff9e6;
+      color: #002244;
+      text-align: center;
+    }
 
-<script>
-if (location.protocol === 'http:') {
-  location.href = location.href.replace('http:', 'https:');
-}
-</script>
+    header {
+      background: linear-gradient(to bottom, #ffffff, #ffe680);
+      padding: 60px 20px 40px;
+    }
 
-<title>Corporación La Fuerte</title>
+    header img {
+      width: 340px;
+      max-width: 95%;
+      display: block;
+      margin: 0 auto;
+      animation: fadeDown 1s ease;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:'Montserrat',sans-serif;
-  background:linear-gradient(135deg,#1a1a2e,#16213e);
-  color:#fff;
-}
+    h1 {
+      margin: 25px 0 10px;
+      font-size: 2.6em;
+      color: #002244;
+      font-weight: bold;
+    }
 
-/* ===== HEADER ===== */
-header{
-  background:#0f3460;
-  text-align:center;
-  padding:2rem 1rem 1.5rem;
-  box-shadow:0 4px 15px rgba(0,0,0,.6);
-}
+    h2 {
+      font-size: 1.2em;
+      color: #003366;
+      margin: 0;
+    }
 
-.logo-animado{
-  width:240px;
-  margin:auto;
-  display:block;
-  animation:entrada 1.8s ease-out,resplandor 3s infinite alternate;
-}
+    .reproductor {
+      background: #ffffff;
+      border: 2px solid #ffcc00;
+      border-radius: 15px;
+      padding: 30px 20px;
+      margin: 30px auto;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
 
-@keyframes entrada{
-  from{transform:scale(.3);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-@keyframes resplandor{
-  from{filter:drop-shadow(0 0 8px #ff6f61)}
-  to{filter:drop-shadow(0 0 18px #ffcc00)}
-}
+    .reproductor h3 {
+      color: #cc9900;
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
 
-header h1{
-  color:#ffeb3b;
-  margin:1rem 0;
-  font-size:2.5rem;
-}
+    audio {
+      width: 85%;
+      max-width: 400px;
+      height: 40px;
+      border-radius: 10px;
+      border: none;
+    }
 
-.btn-contacto{
-  display:inline-block;
-  background:#ffcc00;
-  color:#000;
-  font-weight:bold;
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  box-shadow:0 0 15px rgba(255,204,0,.6);
-}
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
+    }
 
-/* ===== GRID ===== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  padding:14px;
-}
+    .botones a {
+      background-color: #ffcc00;
+      color: #002244;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s ease;
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
 
-/* ===== CARD ===== */
-.card{
-  background:#222831;
-  border:2px solid #ff6f61;
-  border-radius:16px;
-  padding:12px 6px 14px;
-  text-align:center;
-  position:relative;
-  cursor:pointer;
-}
+    .botones a:hover {
+      background-color: #002244;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+    }
 
-.card.activa{
-  border-color:#ffcc00;
-  box-shadow:0 0 18px rgba(255,204,0,.9);
-}
+    footer {
+      background-color: #ffcc00;
+      color: #002244;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-.card.activa::before{
-  content:"🔴 EN VIVO";
-  position:absolute;
-  top:6px;
-  right:6px;
-  background:red;
-  padding:3px 8px;
-  border-radius:12px;
-  font-size:.7rem;
-}
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1em; }
+      .botones a {
+        width: 100%;
+        max-width: none;
+      }
 
-.logo{
-  width:90px;
-  height:90px;
-  object-fit:contain;
-  background:#fff;
-  padding:5px;
-  border-radius:10px;
-}
-
-h2{
-  color:#ffcc00;
-  font-size:15px;
-  margin:8px 0;
-}
-
-/* ===== PLAY BUTTON ===== */
-.play-btn{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  border:none;
-  background:#ffcc00;
-  cursor:pointer;
-  position:relative;
-  animation:pulse 2s infinite;
-}
-
-.play-btn::before{
-  content:"▶";
-  font-size:22px;
-  color:#000;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-45%,-50%);
-}
-
-.play-btn.stop{
-  background:#ff3b3b;
-  animation:none;
-}
-
-.play-btn.stop::before{
-  content:"■";
-  transform:translate(-50%,-50%);
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(255,204,0,.7)}
-  70%{box-shadow:0 0 0 14px rgba(255,204,0,0)}
-  100%{box-shadow:0 0 0 0 rgba(255,204,0,0)}
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:1.5rem;
-  background:#0f0f0f;
-  color:#aaa;
-  font-size:.85rem;
-}
-</style>
+      header img {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-  <img src="https://imgfz.com/i/bmnsNX4.png" class="logo-animado">
-  <h1>Corporación La Fuerte</h1>
-  <a href="https://wa.me/51968093770" class="btn-contacto">📞 Contrata publicidad aquí</a>
-</header>
+  <!-- Cabecera -->
+  <header>
+    <img src="https://imgfz.com/i/b5XQLxd.png" alt="Logo Radio La Poderosa">
+    <h1>Radio La Poderosa</h1>
+    <h2>La radio que se siente - 89.5 FM en Sullana</h2>
+  </header>
 
-<main class="grid">
+  <!-- Reproductor -->
+  <div class="reproductor">
+    <h3>🎧 Escúchanos en vivo</h3>
+    <audio controls autoplay>
+      <source src="https://sonic.globalstream.pro/8070/stream" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
 
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/7322/;">
-  <img src="https://imgfz.com/i/fmdxHD8.png" class="logo">
-  <h2>La Fuerte</h2>
-  <button class="play-btn"></button>
-</div>
+  <!-- Botones de acción -->
+  <div class="botones">
+    <a href="https://www.facebook.com/share/1ZMtdLd32N/" target="_blank">📘 Facebook</a>
+    <a href="https://wa.me/51925865545" target="_blank">🎤 WhatsApp Oyentes</a>
+    <a href="https://wa.me/51912807362" target="_blank">📢 Publicidad</a>
+    <a href="https://play.google.com/store/apps/details?id=com.innovatel.radiolapoderosa" target="_blank">📲 Descargar App</a>
+  </div>
 
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/7320/;">
-  <img src="https://imgfz.com/i/FRicwT8.png" class="logo">
-  <h2>La Jefa</h2>
-  <button class="play-btn"></button>
-</div>
-
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/7324/;">
-  <img src="https://imgfz.com/i/bBApQu2.png" class="logo">
-  <h2>San Francisco</h2>
-  <button class="play-btn"></button>
-</div>
-
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/8342/;">
-  <img src="https://imgfz.com/i/bVMWlXD.png" class="logo">
-  <h2>Máxima</h2>
-  <button class="play-btn"></button>
-</div>
-
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/8464/;">
-  <img src="https://imgfz.com/i/J89AMPT.png" class="logo">
-  <h2>La Cumbiambera</h2>
-  <button class="play-btn"></button>
-</div>
-
-<div class="card" data-stream="https://panelautodj.innovatestream.pe/8466/;">
-  <img src="https://imgfz.com/i/zauB0Id.png" class="logo">
-  <h2>La Raya</h2>
-  <button class="play-btn"></button>
-</div>
-
-</main>
-
-<footer>© 2025 Corporación La Fuerte</footer>
-
-<script>
-let currentAudio = null;
-
-function playRadio(card){
-  const btn = card.querySelector('.play-btn');
-  const stream = card.dataset.stream;
-
-  // STOP
-  if(card.classList.contains('activa')){
-    if(currentAudio){
-      currentAudio.src = '';
-      currentAudio = null;
-    }
-    card.classList.remove('activa');
-    btn.classList.remove('stop');
-    return;
-  }
-
-  // Detener otra radio
-  if(currentAudio){
-    currentAudio.src = '';
-    currentAudio = null;
-  }
-
-  document.querySelectorAll('.card').forEach(c=>c.classList.remove('activa'));
-  document.querySelectorAll('.play-btn').forEach(b=>b.classList.remove('stop'));
-
-  // PLAY directo (sin preload, sin hipo)
-  currentAudio = new Audio(stream + '?t=' + Date.now());
-  currentAudio.play();
-
-  card.classList.add('activa');
-  btn.classList.add('stop');
-}
-
-// Click en botón
-document.querySelectorAll('.play-btn').forEach(btn=>{
-  btn.addEventListener('click', e=>{
-    e.stopPropagation();
-    playRadio(btn.closest('.card'));
-  });
-});
-
-// Click en todo el cuadro
-document.querySelectorAll('.card').forEach(card=>{
-  card.addEventListener('click', ()=>{
-    playRadio(card);
-  });
-});
-</script>
+  <!-- Pie de página -->
+  <footer>
+    Diseñado y desarrollado por Marcony Clavijo – Innovación que conecta.
+  </footer>
 
 </body>
 </html>
